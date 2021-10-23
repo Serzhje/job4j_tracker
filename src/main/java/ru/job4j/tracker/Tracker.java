@@ -55,10 +55,10 @@ public class Tracker {
     }
 
     public boolean delete(int id) {
-        int startCopy = indexOf(id);
-        boolean rsl = startCopy != -1;
+        int index = indexOf(id);
+        boolean rsl = index != -1;
         if (rsl) {
-            System.arraycopy(items, startCopy + 1, items, startCopy, size - startCopy - 1);
+            System.arraycopy(items, index + 1, items, index, size - index - 1);
             items[size - 1] = null;
             size--;
         }
