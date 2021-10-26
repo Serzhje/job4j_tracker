@@ -16,7 +16,8 @@ public class Matches {
                 if (matches > count) {
                     System.out.println("Введите количество спичек не больше " + count);
                 } else {
-                    System.out.println("Вы ввели неверное количество спичек \nПовторите ввод");
+                    System.out.println("Вы ввели неверное количество спичек "
+                            + System.lineSeparator() + "Повторите ввод");
                 }
                 continue;
             }
