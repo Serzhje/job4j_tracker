@@ -10,14 +10,14 @@ public class UserStore {
             }
         }
         if (user == null) {
-            throw new UserNotFoundException();
+            throw new UserNotFoundException("User not found");
         }
         return user;
     }
 
     public static boolean validate(User user) throws UserInvalidException {
         if (!user.isValid() || user.getUsername().length() < 3) {
-            throw new UserInvalidException();
+            throw new UserInvalidException("user is not valid");
         }
         return true;
     }
@@ -31,9 +31,9 @@ public class UserStore {
                 System.out.println("This user has an access");
             }
         } catch (UserInvalidException e) {
-            System.out.println("user is not valid");
+            e.printStackTrace();
         } catch (UserNotFoundException e) {
-            System.out.println("User not found");
+            e.printStackTrace();
         }
     }
 }
