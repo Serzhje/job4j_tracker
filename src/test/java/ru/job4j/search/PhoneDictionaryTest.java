@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import static org.hamcrest.core.Is.is;
 
 public class PhoneDictionaryTest {
+
     @Test
     public void whenFindByName() {
         PhoneDictionary phones = new PhoneDictionary();
