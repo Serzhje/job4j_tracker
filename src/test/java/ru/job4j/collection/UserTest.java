@@ -11,6 +11,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 public class UserTest {
+
     @Test
     public void whenAsc() {
         Set<User> users = new TreeSet<>();
