@@ -14,9 +14,6 @@ public class StringCompare implements Comparator<String> {
                 break;
             }
         }
-        if (rsl == 0 && len != 0) {
-            rsl = len;
-        }
-        return rsl;
+        return  rsl == 0 && len != 0 ? len : rsl;
     }
 }
