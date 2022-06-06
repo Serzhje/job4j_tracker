@@ -1,4 +1,5 @@
 package ru.job4j.collection;
+import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
 import java.util.*;
 
 public class Departments {
@@ -7,8 +8,8 @@ public class Departments {
         for (String value : deps) {
             String start = "";
             for (String el : value.split("/")) {
-                start += el + "/";
-                tmp.add(start.substring(0, start.length() - 1));
+                start += "".equals(start) ? el : "/" + el;
+                tmp.add(start);
             }
         }
         return new ArrayList<>(tmp);
