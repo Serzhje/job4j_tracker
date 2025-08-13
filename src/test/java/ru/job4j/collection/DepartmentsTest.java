@@ -11,23 +11,23 @@ import static org.hamcrest.Matchers.is;
 public class DepartmentsTest {
     @Test
     public void whenMissed() {
-        List<String> input = Arrays.asList("k1/sk1", "k2/sk1");
-        List<String> expect = Arrays.asList("k1", "k1/sk1", "k2", "k2/sk1");
+        List<String> input = List.of("k1/sk1", "k2/sk1");
+        List<String> expect = List.of("k1", "k1/sk1", "k2", "k2/sk1");
         List<String> result = Departments.fillGaps(input);
         assertThat(result, is(expect));
     }
 
     @Test
     public void whenNonChange() {
-        List<String> input = Arrays.asList("k1", "k1/sk1");
-        List<String> expect = Arrays.asList("k1", "k1/sk1");
+        List<String> input = List.of("k1", "k1/sk1");
+        List<String> expect = List.of("k1", "k1/sk1");
         List<String> result = Departments.fillGaps(input);
         assertThat(result, is(expect));
     }
 
     @Test
     public void whenSortAscWithoutMissedDepartments() {
-        List<String> input = Arrays.asList(
+        List<String> input = List.of(
                 "K1/SK1",
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
@@ -38,7 +38,7 @@ public class DepartmentsTest {
                 "K2/SK1/SSK2",
                 "K2/SK1/SSK1"
         );
-        List<String> expect = Arrays.asList(
+        List<String> expect = List.of(
                 "K1",
                 "K1/SK1",
                 "K1/SK1/SSK1",
@@ -55,7 +55,7 @@ public class DepartmentsTest {
 
     @Test
     public void whenSortAscWithMissedDepartments() {
-        List<String> input = Arrays.asList(
+        List<String> input = List.of(
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
                 "K2/SK1",
@@ -63,7 +63,7 @@ public class DepartmentsTest {
                 "K2/SK1/SSK2",
                 "K2/SK1/SSK1"
         );
-        List<String> expect = Arrays.asList(
+        List<String> expect = List.of(
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
                 "K1/SK2",
@@ -77,7 +77,7 @@ public class DepartmentsTest {
 
     @Test
     public void whenSortDescWithoutMissedDepartments() {
-        List<String> input = Arrays.asList(
+        List<String> input = List.of(
                 "K1/SK1",
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
@@ -88,7 +88,7 @@ public class DepartmentsTest {
                 "K2/SK1/SSK2",
                 "K2/SK1/SSK1"
         );
-        List<String> expect = Arrays.asList(
+        List<String> expect = List.of(
                 "K2",
                 "K2/SK1",
                 "K2/SK1/SSK1",
@@ -105,7 +105,7 @@ public class DepartmentsTest {
 
     @Test
     public void whenSortDescWithMissedDepartments() {
-        List<String> input = Arrays.asList(
+        List<String> input = List.of(
                 "K1/SK1",
                 "K1/SK1/SSK1",
                 "K1/SK1/SSK2",
@@ -114,7 +114,7 @@ public class DepartmentsTest {
                 "K2/SK1/SSK2",
                 "K2/SK1/SSK1"
         );
-        List<String> expect = Arrays.asList(
+        List<String> expect = List.of(
                 "K2/SK1",
                 "K2/SK1/SSK1",
                 "K2/SK1/SSK2",
