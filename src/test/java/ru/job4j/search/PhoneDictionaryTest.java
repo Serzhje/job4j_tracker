@@ -3,7 +3,6 @@ package ru.job4j.search;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-import java.util.ArrayList;
 import static org.hamcrest.core.Is.is;
 
 public class PhoneDictionaryTest {
