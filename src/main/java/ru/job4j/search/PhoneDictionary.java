@@ -12,10 +12,11 @@ public class PhoneDictionary {
     }
 
     public ArrayList<Person> find(String key) {
-        var predName = (Predicate<Person>) p -> p.getName().contains(key);
-        var predSurname = (Predicate<Person>) p -> p.getSurname().contains(key);
-        var predPhone = (Predicate<Person>) p -> p.getPhone().contains(key);
-        var predAddress = (Predicate<Person>) p -> p.getAddress().contains(key);
+
+        Predicate<Person> predName = p -> p.getName().contains(key);
+        Predicate<Person> predSurname = p -> p.getSurname().contains(key);
+        Predicate<Person> predPhone = p -> p.getPhone().contains(key);
+        Predicate<Person> predAddress = p -> p.getAddress().contains(key);
         var combine = predName.or(predSurname).or(predPhone).or(predAddress);
 
         var result = new ArrayList<Person>();
